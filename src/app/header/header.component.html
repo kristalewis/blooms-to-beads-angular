@@ -1,0 +1,16 @@
+<mat-toolbar class="header-toolbar">
+    <div class="header-title" (click)="onNavItemClicked(routePaths.HOME)">Blooms To Beads</div>
+    <div class="menu-item-container">
+        <span class="parent-menu-item">
+            <div class="menu" [matMenuTriggerFor]="menu">Products</div>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="onNavItemClicked(routePaths.JEWELRY)">Jewelry</button>
+                <button mat-menu-item (click)="onNavItemClicked(routePaths.NONJEWELRY)">Non-Jewelry</button>
+                <button mat-menu-item (click)="onNavItemClicked(routePaths.SHADOWBOXES)">Shadowboxes</button>
+            </mat-menu>
+        </span>
+        <span class="parent-menu-item" (click)="onNavItemClicked(routePaths.FAQ)">FAQ's</span>
+        <span class="parent-menu-item" (click)="onNavItemClicked(routePaths.ABOUT)">About</span>
+        <span class="parent-menu-item" (click)="onNavItemClicked(routePaths.CONTACT)">Contact</span>
+    </div>
+</mat-toolbar>

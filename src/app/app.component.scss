@@ -1,0 +1,10 @@
+.app-container {
+    min-height: 100vh;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+}
+
+.test {
+    flex-grow: 1;
+}
