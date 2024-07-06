@@ -1,1 +1,7 @@
-<p>faq works!</p>
+<div class="page-title">Frequently Asked Questions</div>
+@for (question of questions; track question) {
+    <div class="question-container">
+        <div class="question">{{ question.question }}</div>
+        <div class="answer">{{ question.answer }}</div>
+    </div>
+}
