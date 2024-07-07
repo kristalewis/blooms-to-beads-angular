@@ -1,0 +1,32 @@
+.footer-container {
+    margin: 4em 0 2em 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-row-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-item {
+    padding: 0.25em 0;
+}
+
+.icon-text-container {
+    display: flex;
+    align-items: center;
+}
+
+.email {
+    cursor: pointer;
+}
+
+.margin-right {
+    margin-right: 1.5em;
+}
+
+.material-icons {
+    font-size: 18px;
+    margin-right: 3px;
+}
