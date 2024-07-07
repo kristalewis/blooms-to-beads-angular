@@ -2,3 +2,25 @@
 body {
     margin: 0;
 }
+
+.mat-mdc-snack-bar-container {
+    &.snackbar-success {
+        --mdc-snackbar-container-color: green;
+        --mat-mdc-snack-bar-button-color: #fff;
+        --mdc-snackbar-supporting-text-color: #fff;
+    }
+
+    &.snackbar-failure {
+        --mdc-snackbar-container-color: red;
+        --mat-mdc-snack-bar-button-color: #fff;
+        --mdc-snackbar-supporting-text-color: #fff;
+    }
+}
+
+.btb-snackbar {
+    margin: 0 !important;
+    position: absolute;
+    right: 25px;
+    top: 80px;
+    max-width: 90vw;
+}
