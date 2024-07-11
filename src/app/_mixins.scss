@@ -1,0 +1,7 @@
+@mixin print($declarations) {
+
+    @each $property,
+    $value in $declarations {
+        #{$property}: $value;
+    }
+}
