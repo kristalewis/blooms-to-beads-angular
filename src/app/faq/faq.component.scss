@@ -1,12 +1,10 @@
-.page-title {
-    font-size: 26px;
-    font-weight: bold;
-    margin: 1em 0;
-}
+@use './../_mixins' as mixins;
 
-.question-container {
-    margin-top: 1.75em;
-    line-height: 1.35;
+@mixin question-container($page-title-margin, $text-line-height) {
+    .question-container {
+        @include mixins.print($page-title-margin);
+        @include mixins.print($text-line-height);
+    }
 }
 
 .question {

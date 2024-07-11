@@ -1,3 +1,20 @@
+@use './mixins' as mixins;
+@use './about/about.component.scss' as about;
+@use './contact/contact.component.scss' as contact;
+@use './faq/faq.component.scss' as faq;
+
+$page-title-margin: (
+    margin-top: 1.75em,
+);
+
+$text-line-height: (
+    line-height: 1.35,
+);
+
+@include about.text-container($page-title-margin, $text-line-height);
+@include contact.contact-form($page-title-margin, $text-line-height);
+@include faq.question-container($page-title-margin, $text-line-height);
+
 .app-container {
     min-height: 100vh;
     cursor: default;
@@ -9,6 +26,12 @@
     flex-grow: 1;
     padding: 0 3em;
     font-size: 18px;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 1em 0;
 }
 
 body {

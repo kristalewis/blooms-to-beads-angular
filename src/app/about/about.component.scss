@@ -1,14 +1,12 @@
-.page-title {
-    font-size: 26px;
-    font-weight: bold;
-    margin: 1em 0;
-}
+@use './../_mixins' as mixins;
 
-.text-container  {
-    margin-top: 1.75em;
-    
-    div {
-        margin-bottom: 1.5em;
-        line-height: 1.35;
+@mixin text-container($page-title-margin, $text-line-height) {
+    .text-container  {
+        @include mixins.print($page-title-margin);
+        
+        div {
+            margin-bottom: 1.5em;
+            @include mixins.print($text-line-height);
+        }
     }
 }
