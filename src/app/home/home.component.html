@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="page-title">Welcome</div>
+
+<div class="home-page-container">
+    @for (productCard of productCards; track productCard) {
+        <mat-card class="product-card" [class.prevent-stretching]="productCard.isShortImage" appearance="outlined">
+            <mat-card-header> 
+              <mat-card-title>{{ productCard.productName }}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image (click)="routeToProductPage(productCard.viewMoreRoute)" src="assets/{{ productCard.imageFileName }}.jpg" alt="{{ productCard.productName }}">
+            <mat-card-actions>
+              <button mat-button (click)="routeToProductPage(productCard.viewMoreRoute)">View More</button>
+            </mat-card-actions>
+        </mat-card>
+    }
+</div>
