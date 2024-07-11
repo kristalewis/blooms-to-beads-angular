@@ -1,0 +1,20 @@
+.home-page-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  max-width: 400px;
+  border-radius: 15px;
+  margin-right: 2em;
+  margin-bottom: 1.75em;
+}
+
+.prevent-stretching {
+  align-self: flex-start;
+}
+
+img {
+  margin: 0.5em 1em;
+  cursor: pointer;
+}
