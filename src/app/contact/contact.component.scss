@@ -1,9 +1,10 @@
 @use './../_mixins' as mixins;
 
-@mixin contact-form($page-title-margin, $text-line-height) {
+@mixin contact-form($page-title-margin, $text-line-height, $page-content-bottom-margin) {
     form {
         @include mixins.print($page-title-margin);
         @include mixins.print($text-line-height);
+        @include mixins.print($page-content-bottom-margin);
     }
 }
 
