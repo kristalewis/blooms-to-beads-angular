@@ -1,8 +1,9 @@
 @use './../_mixins' as mixins;
 
-@mixin question-container($page-title-margin, $text-line-height, $page-content-bottom-margin) {
+@mixin question-container($text-line-height, $page-content-bottom-margin) {
     .question-container {
-        @include mixins.print($page-title-margin);
+        margin-bottom: 1.5em;
+
         @include mixins.print($text-line-height);
 
         &:last-of-type {

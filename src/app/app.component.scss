@@ -3,12 +3,9 @@
 @use './contact/contact.component.scss' as contact;
 @use './faq/faq.component.scss' as faq;
 @use './footer/footer.component.scss' as footer;
+@use './header/header.component.scss' as header;
 @use './home/home.component.scss' as home;
 @use './product/product.component.scss' as product;
-
-$page-title-margin: (
-    margin-top: 1.75em,
-);
 
 $text-line-height: (
     line-height: 1.35,
@@ -18,9 +15,9 @@ $page-content-bottom-margin: (
     margin-bottom: 3em,
 );
 
-@include about.text-container($page-title-margin, $text-line-height, $page-content-bottom-margin);
-@include contact.contact-form($page-title-margin, $text-line-height, $page-content-bottom-margin);
-@include faq.question-container($page-title-margin, $text-line-height, $page-content-bottom-margin);
+@include about.text-container($text-line-height, $page-content-bottom-margin);
+@include contact.contact-page-container($text-line-height, $page-content-bottom-margin);
+@include faq.question-container($text-line-height, $page-content-bottom-margin);
 @include product.product-card-description-line-height($text-line-height);
 
 $product-card-container: (
@@ -49,6 +46,14 @@ $product-card-title: (
 @include home.product-card-title($product-card-title);
 @include product.product-card-title($product-card-title);
 
+$app-primary-background: (
+    background-color: #675682,
+    color: white,
+);
+
+@include contact.submit-button($app-primary-background);
+@include header.toolbar($app-primary-background);
+
 .app-container {
     min-height: 100vh;
     cursor: default;
@@ -70,7 +75,7 @@ $product-card-title: (
 .page-title {
     font-size: 26px;
     font-weight: bold;
-    margin: 1em 0;
+    margin: 1em 0 0.75em 0;
 }
 
 body {
