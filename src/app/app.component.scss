@@ -2,6 +2,9 @@
 @use './about/about.component.scss' as about;
 @use './contact/contact.component.scss' as contact;
 @use './faq/faq.component.scss' as faq;
+@use './footer/footer.component.scss' as footer;
+@use './home/home.component.scss' as home;
+@use './product/product.component.scss' as product;
 
 $page-title-margin: (
     margin-top: 1.75em,
@@ -11,21 +14,57 @@ $text-line-height: (
     line-height: 1.35,
 );
 
-@include about.text-container($page-title-margin, $text-line-height);
-@include contact.contact-form($page-title-margin, $text-line-height);
-@include faq.question-container($page-title-margin, $text-line-height);
+$page-content-bottom-margin: (
+    margin-bottom: 3em,
+);
+
+@include about.text-container($page-title-margin, $text-line-height, $page-content-bottom-margin);
+@include contact.contact-form($page-title-margin, $text-line-height, $page-content-bottom-margin);
+@include faq.question-container($page-title-margin, $text-line-height, $page-content-bottom-margin);
+@include product.product-card-description-line-height($text-line-height);
+
+$product-card-container: (
+    display: flex,
+    flex-wrap: wrap,
+    align-items: flex-start,
+);
+
+@include home.home-page-container($product-card-container);
+@include product.product-page-container($product-card-container);
+
+$product-card: (
+    max-width: 400px,
+    border-radius: 15px,
+    margin-right: 2em,
+    margin-bottom: 3em,
+);
+
+@include home.product-card($product-card);
+@include product.product-card($product-card);
+
+$product-card-title: (
+    padding: 0.5em 0.75em,
+);
+
+@include home.product-card-title($product-card-title);
+@include product.product-card-title($product-card-title);
 
 .app-container {
     min-height: 100vh;
     cursor: default;
     display: flex;
     flex-direction: column;
+    background-color: whitesmoke;
 }
 
 .page-body-container {
     flex-grow: 1;
-    padding: 0 3em;
+    padding: 0 9em 1em 9em;
     font-size: 18px;
+
+    @media only screen and (max-width: 1200px) {
+        padding: 0 3em 1em 3em;
+    }
 }
 
 .page-title {
@@ -36,6 +75,10 @@ $text-line-height: (
 
 body {
     margin: 0;
+}
+
+mat-card-header.mat-mdc-card-header {
+    padding: 0;
 }
 
 .mat-mdc-snack-bar-container {

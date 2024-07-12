@@ -1,16 +1,32 @@
-.product-page-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+@use './../_mixins' as mixins;
+
+@mixin product-page-container($product-card-container) {
+    .product-page-container {
+      @include mixins.print($product-card-container);
+    }
+  }
+
+@mixin product-card($product-card) {
+    .product-page-container {
+        .product-card {
+            @include mixins.print($product-card);
+        }
+    }
 }
 
-.product-card {
-    max-width: 400px;
-    border-radius: 15px;
-    margin-right: 2em;
-    margin-bottom: 1.75em;
+@mixin product-card-title($product-card-title) {
+    .product-page-container {
+      .mat-mdc-card-header-text {
+        mat-card-title.mat-mdc-card-title {
+            @include mixins.print($product-card-title);
+        }
+      }
+    }
 }
 
-img {
-    margin: 0.5em 1em;
+@mixin product-card-description-line-height($text-line-height) {
+    p {
+        @include mixins.print($text-line-height);
+    }
 }
+
