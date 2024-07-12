@@ -1,8 +1,7 @@
 @use './../_mixins' as mixins;
 
-@mixin text-container($page-title-margin, $text-line-height, $page-content-bottom-margin) {
+@mixin text-container($text-line-height, $page-content-bottom-margin) {
     .text-container  {
-        @include mixins.print($page-title-margin);
         @include mixins.print($page-content-bottom-margin);
         
         div {
