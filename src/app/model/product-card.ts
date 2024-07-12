@@ -1,8 +1,9 @@
 import { RoutePath } from "../enum/route-path.enum";
 
-export interface HomePageProductCard {
+export interface ProductCard {
     productName: string;
     imageFileName: string;
-    viewMoreRoute: RoutePath;
+    viewMoreRoute: RoutePath | null;
     isShortImage: boolean;
+    description: string | null;
 }
