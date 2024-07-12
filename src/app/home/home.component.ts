@@ -19,7 +19,9 @@ export class HomeComponent {
 
   private _router: Router = inject(Router);
 
-  routeToProductPage(route: RoutePath): void {
-    this._router.navigate([route]);
+  routeToProductPage(route: RoutePath | null): void {
+    if (route) {
+      this._router.navigate([route]);
+    }
   }
 }

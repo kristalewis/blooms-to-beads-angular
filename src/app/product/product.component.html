@@ -1,1 +1,15 @@
-<p>product works!</p>
+<div class="page-title">{{ pageLayout?.title }}</div>
+
+<div class="product-page-container">
+    @for (productCard of pageLayout?.productCards; track productCard) {
+        <mat-card class="product-card" appearance="outlined">
+            <mat-card-header> 
+              <mat-card-title>{{ productCard.productName }}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="assets/{{ productCard.imageFileName }}.jpg" alt="{{ productCard.productName }}">
+            <mat-card-content>
+                <p>{{ productCard.description }}</p>
+              </mat-card-content>
+        </mat-card>
+    }
+</div>
