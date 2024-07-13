@@ -10,6 +10,11 @@
     .product-page-container {
         .product-card {
             @include mixins.print($product-card);
+
+            @include mixins.px-1300-breakpoint();
+            @include mixins.px-1064-breakpoint();
+            @include mixins.px-642-breakpoint();
+            @include mixins.px-500-breakpoint();
         }
     }
 }

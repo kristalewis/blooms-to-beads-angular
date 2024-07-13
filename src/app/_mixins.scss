@@ -5,3 +5,29 @@
         #{$property}: $value;
     }
 }
+
+@mixin px-1300-breakpoint {
+    @media (max-width: 1300px) {
+        max-width: 300px;
+    }
+}
+
+@mixin px-1064-breakpoint {
+    @media (max-width: 1064px) {
+        max-width: 250px;
+    }
+}
+
+@mixin px-642-breakpoint {
+    @media (max-width: 642px) {
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@mixin px-500-breakpoint {
+    @media (max-width: 500px) {
+        max-width: 250px;
+    }
+}
