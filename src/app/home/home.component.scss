@@ -3,6 +3,10 @@
 @mixin home-page-container($product-card-container) {
   .home-page-container {
     @include mixins.print($product-card-container);
+
+    @media only screen and (max-width: 1796px) {
+      justify-content: space-between;
+    }
   }
 }
 
@@ -10,6 +14,11 @@
   .home-page-container {
       .product-card {
           @include mixins.print($product-card);
+
+          @include mixins.px-1300-breakpoint();
+            @include mixins.px-1064-breakpoint();
+            @include mixins.px-642-breakpoint();
+            @include mixins.px-500-breakpoint();
       }
   }
 }

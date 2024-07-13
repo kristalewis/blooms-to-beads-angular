@@ -12,7 +12,7 @@ $text-line-height: (
 );
 
 $page-content-bottom-margin: (
-    margin-bottom: 3em,
+    margin-bottom: 2em,
 );
 
 @include about.text-container($text-line-height, $page-content-bottom-margin);
@@ -30,10 +30,9 @@ $product-card-container: (
 @include product.product-page-container($product-card-container);
 
 $product-card: (
-    max-width: 400px,
+    max-width: 350px,
     border-radius: 15px,
-    margin-right: 2em,
-    margin-bottom: 3em,
+    margin: 0 0.5em 2em 0.5em,
 );
 
 @include home.product-card($product-card);
@@ -64,11 +63,16 @@ $app-primary-background: (
 
 .page-body-container {
     flex-grow: 1;
-    padding: 0 9em 1em 9em;
+    padding: 0 5em 0 5em;
     font-size: 18px;
 
+
     @media only screen and (max-width: 1200px) {
-        padding: 0 3em 1em 3em;
+        padding: 0 3em 0 3em;
+    }
+
+    @media only screen and (max-width: 600px) {
+        padding: 0 0.5em 0 0.5em;
     }
 }
 
