@@ -7,7 +7,6 @@ import { RoutePath } from '../enum/route-path.enum';
   standalone: true,
   imports: [],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
 

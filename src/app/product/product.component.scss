@@ -30,8 +30,10 @@
 }
 
 @mixin product-card-description-line-height($text-line-height) {
+  .product-page-container {
     p {
         @include mixins.print($text-line-height);
     }
+  }
 }
 

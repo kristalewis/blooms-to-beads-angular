@@ -7,46 +7,48 @@
     }
 }
 
-.contact-type-header {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.email-container {
-    margin-top: 1em;
-}
-
-.form-element {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0.5em;
-    max-width: 400px;
-
-    .ng-invalid {
-        border: 2px solid red;
+.contact-page-container {
+    .contact-type-header {
+        font-size: 18px;
+        font-weight: bold;
     }
-
-    input, textarea {
-        border-radius: 5px;
-        border: 2px solid darkgray;
-        line-height: 1.35;
+    
+    .email-container {
+        margin-top: 1em;
     }
-}
-
-.question-label-error-message-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.error-message {
-    color: red;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-textarea {
-   resize: none;
+    
+    .form-element {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.5em;
+        max-width: 400px;
+    
+        .ng-invalid {
+            border: 2px solid red;
+        }
+    
+        input, textarea {
+            border-radius: 5px;
+            border: 2px solid darkgray;
+            line-height: 1.75;
+        }
+    }
+    
+    .question-label-error-message-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    
+    .error-message {
+        color: red;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    textarea {
+       resize: none;
+    }
 }
 
 @mixin submit-button($app-primary-background) {

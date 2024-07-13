@@ -3,7 +3,7 @@
 @use './contact/contact.component.scss' as contact;
 @use './faq/faq.component.scss' as faq;
 @use './footer/footer.component.scss' as footer;
-@use './header/header.component.scss' as header;
+@use './nav-bar.scss' as nav-bar;
 @use './home/home.component.scss' as home;
 @use './product/product.component.scss' as product;
 
@@ -51,7 +51,7 @@ $app-primary-background: (
 );
 
 @include contact.submit-button($app-primary-background);
-@include header.toolbar($app-primary-background);
+@include nav-bar.toolbar($app-primary-background);
 
 .app-container {
     min-height: 100vh;
@@ -71,8 +71,8 @@ $app-primary-background: (
         padding: 0 3em 0 3em;
     }
 
-    @media only screen and (max-width: 600px) {
-        padding: 0 0.5em 0 0.5em;
+    @media only screen and (max-width: 599px) {
+        padding: 0 2em 0 2em;
     }
 }
 
