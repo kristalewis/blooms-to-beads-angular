@@ -6,20 +6,20 @@
     }
 }
 
-@mixin px-1300-breakpoint {
-    @media (max-width: 1300px) {
+@mixin px-1340-breakpoint {
+    @media (max-width: 1340px) {
         max-width: 300px;
     }
 }
 
-@mixin px-1064-breakpoint {
-    @media (max-width: 1064px) {
+@mixin px-1116-breakpoint {
+    @media (max-width: 1116px) {
         max-width: 250px;
     }
 }
 
-@mixin px-642-breakpoint {
-    @media (max-width: 642px) {
+@mixin px-690-breakpoint {
+    @media (max-width: 690px) {
         max-width: 350px;
         margin-left: auto;
         margin-right: auto;

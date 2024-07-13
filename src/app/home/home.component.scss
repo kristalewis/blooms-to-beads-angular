@@ -15,10 +15,10 @@
       .product-card {
           @include mixins.print($product-card);
 
-          @include mixins.px-1300-breakpoint();
-            @include mixins.px-1064-breakpoint();
-            @include mixins.px-642-breakpoint();
-            @include mixins.px-500-breakpoint();
+          @include mixins.px-1340-breakpoint();
+          @include mixins.px-1116-breakpoint();
+          @include mixins.px-690-breakpoint();
+          @include mixins.px-500-breakpoint();
       }
   }
 }
