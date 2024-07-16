@@ -6,41 +6,41 @@
     </div>
     
     <div class="menu-item-container">
-        <span class="top-nav-menu-item">
-            <div class="menu" [matMenuTriggerFor]="menu">Products</div>
-            <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="onNavItemClicked(routePaths.JEWELRY)">Jewelry</button>
-                <button mat-menu-item (click)="onNavItemClicked(routePaths.NONJEWELRY)">Non-Jewelry</button>
-                <button mat-menu-item (click)="onNavItemClicked(routePaths.SHADOWBOXES)">Shadowboxes</button>
-            </mat-menu>
-        </span>
-        <span class="top-nav-menu-item" (click)="onNavItemClicked(routePaths.FAQ)">FAQ's</span>
-        <span class="top-nav-menu-item" (click)="onNavItemClicked(routePaths.ABOUT)">About</span>
-        <span class="top-nav-menu-item" (click)="onNavItemClicked(routePaths.CONTACT)">Contact</span>
+      <span class="top-nav-menu-item">
+          <div class="menu" [matMenuTriggerFor]="menu">{{ productsNavItemLabel }}</div>
+          <mat-menu #menu="matMenu">
+            @for (item of productsSubNavItems; track item) {
+              <button mat-menu-item (click)="onNavItemClicked(item.routePath)">{{ item.label }}</button>
+            }
+          </mat-menu>
+      </span>
+      @for (item of navItems; track item) {
+        <span class="top-nav-menu-item" mat-list-item (click)="onNavItemClicked(item.routePath)">{{ item.label }}</span>
+      }
     </div>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container" >
     <mat-sidenav #sideNav [mode]="'over'" [fixedInViewport]="true" [fixedTopGap]="mobileQuery.matches ? 56 : 64">
-        <mat-nav-list>
-          <span class="side-nav-menu-item" [matMenuTriggerFor]="sideBarMenu">
-            <div class="menu">Products</div>
-            <mat-menu #sideBarMenu="matMenu">
-                <button mat-list-item (click)="onNavItemClicked(routePaths.JEWELRY)">Jewelry</button>
-                <button mat-list-item (click)="onNavItemClicked(routePaths.NONJEWELRY)">Non-Jewelry</button>
-                <button mat-list-item (click)="onNavItemClicked(routePaths.SHADOWBOXES)">Shadowboxes</button>
-            </mat-menu>
-          </span>
-          <span class="side-nav-menu-item" mat-list-item (click)="onNavItemClicked(routePaths.FAQ)">FAQ's</span>
-          <span class="side-nav-menu-item" mat-list-item (click)="onNavItemClicked(routePaths.ABOUT)">About</span>
-          <span class="side-nav-menu-item" mat-list-item (click)="onNavItemClicked(routePaths.CONTACT)">Contact</span>
-        </mat-nav-list>
+      <mat-nav-list>
+        <span class="side-nav-menu-item" [matMenuTriggerFor]="sideBarMenu">
+          <div class="menu">{{ productsNavItemLabel }}</div>
+          <mat-menu #sideBarMenu="matMenu">
+            @for (item of productsSubNavItems; track item) {
+              <button mat-menu-item (click)="onNavItemClicked(item.routePath)">{{ item.label }}</button>
+            }
+          </mat-menu>
+        </span>
+        @for (item of navItems; track item) {
+          <span class="side-nav-menu-item" mat-list-item (click)="onNavItemClicked(item.routePath)">{{ item.label }}</span>
+        }
+      </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
       <div class="page-body-container">
         <router-outlet></router-outlet>
       </div>
       <btb-footer></btb-footer>
-      </mat-sidenav-content>
+    </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

@@ -13,21 +13,27 @@
             <div class="form-element">
                 <div class="question-label-error-message-container">
                     <label>Name</label>
-                    <span *ngIf="!emailForm.get('from_name')?.valid" class="error-message">Name is required</span>
+                    @if (!emailForm.get('from_name')?.valid) { 
+                        <span class="error-message">Name is required</span>
+                    }
                 </div>
                 <input type="text" formControlName="from_name" name="from_name">
             </div>
             <div class="form-element">
                 <div class="question-label-error-message-container">
                     <label>Your Email Address</label>
-                    <span *ngIf="!emailForm.get('reply_to')?.valid" class="error-message">{{ this.emailForm.get('reply_to')?.errors?.["error"] }}</span>
+                    @if (!emailForm.get('reply_to')?.valid) { 
+                        <span class="error-message">{{ this.emailForm.get('reply_to')?.errors?.["error"] }}</span>
+                    }
                 </div>
                 <input formControlName="reply_to" name="reply_to" type="email">
             </div>
             <div class="form-element">
                 <div class="question-label-error-message-container">
                     <label>Message</label>
-                    <span *ngIf="!emailForm.get('message')?.valid" class="error-message">Message is required</span>
+                    @if (!emailForm.get('message')?.valid) { 
+                        <span class="error-message">Message is required</span>
+                    }
                 </div>
                 <textarea formControlName="message" name="message" rows="10"></textarea>
             </div>
