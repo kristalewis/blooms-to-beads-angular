@@ -1,7 +1,46 @@
 <div class="app-container">
-  <btb-header></btb-header>
-  <div class="page-body-container">
-    <router-outlet></router-outlet>
-  </div>
-  <btb-footer></btb-footer>
+  <mat-toolbar class="toolbar">
+    <div class="icon-title-container">
+        <span class="hamburger-icon material-icons" (click)="sideNav.toggle()">menu</span>
+        <div class="header-title" (click)="onNavItemClicked(routePaths.HOME)">Blooms To Beads</div>
+    </div>
+    
+    <div class="menu-item-container">
+        <span class="top-nav-menu-item">
+            <div class="menu" [matMenuTriggerFor]="menu">Products</div>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="onNavItemClicked(routePaths.JEWELRY)">Jewelry</button>
+                <button mat-menu-item (click)="onNavItemClicked(routePaths.NONJEWELRY)">Non-Jewelry</button>
+                <button mat-menu-item (click)="onNavItemClicked(routePaths.SHADOWBOXES)">Shadowboxes</button>
+            </mat-menu>
+        </span>
+        <span class="top-nav-menu-item" (click)="onNavItemClicked(routePaths.FAQ)">FAQ's</span>
+        <span class="top-nav-menu-item" (click)="onNavItemClicked(routePaths.ABOUT)">About</span>
+        <span class="top-nav-menu-item" (click)="onNavItemClicked(routePaths.CONTACT)">Contact</span>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" >
+    <mat-sidenav #sideNav [mode]="'over'" [fixedInViewport]="true" [fixedTopGap]="mobileQuery.matches ? 56 : 64">
+        <mat-nav-list>
+          <span class="side-nav-menu-item" [matMenuTriggerFor]="sideBarMenu">
+            <div class="menu">Products</div>
+            <mat-menu #sideBarMenu="matMenu">
+                <button mat-list-item (click)="onNavItemClicked(routePaths.JEWELRY)">Jewelry</button>
+                <button mat-list-item (click)="onNavItemClicked(routePaths.NONJEWELRY)">Non-Jewelry</button>
+                <button mat-list-item (click)="onNavItemClicked(routePaths.SHADOWBOXES)">Shadowboxes</button>
+            </mat-menu>
+          </span>
+          <span class="side-nav-menu-item" mat-list-item (click)="onNavItemClicked(routePaths.FAQ)">FAQ's</span>
+          <span class="side-nav-menu-item" mat-list-item (click)="onNavItemClicked(routePaths.ABOUT)">About</span>
+          <span class="side-nav-menu-item" mat-list-item (click)="onNavItemClicked(routePaths.CONTACT)">Contact</span>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="page-body-container">
+        <router-outlet></router-outlet>
+      </div>
+      <btb-footer></btb-footer>
+      </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

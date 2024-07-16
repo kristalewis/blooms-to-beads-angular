@@ -6,7 +6,6 @@ import { FaqQuestion } from '../model/faq-question';
   standalone: true,
   imports: [],
   templateUrl: './faq.component.html',
-  styleUrl: './faq.component.scss'
 })
 export class FaqComponent {
   questions = [

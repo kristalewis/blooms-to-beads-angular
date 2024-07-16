@@ -2,8 +2,6 @@
 
 @mixin question-container($text-line-height, $page-content-bottom-margin) {
     .question-container {
-        margin-bottom: 1.5em;
-
         @include mixins.print($text-line-height);
 
         &:last-of-type {
@@ -12,11 +10,15 @@
     }
 }
 
-.question {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.answer {
-    margin-top: 0.5em;
+.question-container {
+    margin-bottom: 1.5em;
+    
+    .question {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .answer {
+        margin-top: 0.5em;
+    }
 }

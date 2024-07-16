@@ -11,7 +11,6 @@ import { HOME_PAGE_PRODUCT_CARDS } from './home.props';
   standalone: true,
   imports: [CommonModule, MatCardModule, MatButtonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   

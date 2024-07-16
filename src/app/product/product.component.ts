@@ -11,7 +11,6 @@ import { PRODUCT_PAGE_PRODUCT_CARDS } from './product.props';
   standalone: true,
   imports: [CommonModule, MatCardModule],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.scss'
 })
 export class ProductComponent {
   pageLayout: ProductPage | undefined = undefined;
