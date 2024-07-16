@@ -23,6 +23,13 @@ const necklaceCard: ProductCard = {
     description: "Necklaces have 3 beads and 2 sterling silver spacers that are strung on an 18 inch sterling silver chain. More beads and spacers can be added to them to make them whatever length you'd like. However many beads you want, these necklaces are an easy way to keep cherished memories close to your heart.",
 };
 
+const leatherBraceletCard: ProductCard = {
+    productName: "Leather Bracelet",
+    imageFileName: "leather-bracelet",
+    viewMoreRoute: null,
+    description: "Three flower beads are highlighted on a leather band to create this distinctive bracelet for a male or female.",
+};
+
 const necklacePendantCard: ProductCard = {
     productName: "Necklace Pendant",
     imageFileName: "pendant",
@@ -46,7 +53,7 @@ const dropEarringsCard: ProductCard = {
 
 const jewelryPageLayout: ProductPage = {
     title: "Jewelry",
-    productCards: [braceletCard, pandoarBeadCard, necklaceCard, necklacePendantCard, studEarringsCard, dropEarringsCard],
+    productCards: [braceletCard, pandoarBeadCard, necklaceCard, leatherBraceletCard, necklacePendantCard, studEarringsCard, dropEarringsCard],
 };
 
 const suncatcherCard: ProductCard = {
@@ -77,9 +84,23 @@ const ornamentCard: ProductCard = {
     description: "Put in a clear shell and hanging on a 9in tall silver colored stand, these make classy additions to any coffee table, fireplace mantle or china cabinet. A singular flower is the focal point, making them simple yet bold pieces.",
 };
 
+const rosaryCard: ProductCard = {
+    productName: "Rosary",
+    imageFileName: "rosary",
+    viewMoreRoute: null,
+    description: "The basic rosary has a series of solid colored beads linked together in the rosary pattern.",
+};
+
+const specialtyRosaryCard: ProductCard = {
+    productName: "Specialty Rosary",
+    imageFileName: "specialty-rosary",
+    viewMoreRoute: null,
+    description: "The specialty rosary features primuim swirled beads with sterling silver end caps and separators. This makes for a stunning rosary.",
+};
+
 const nonJewelryPageLayout: ProductPage = {
     title: "Non Jewelry",
-    productCards: [suncatcherCard, bookmarkCard, keychainCard, ornamentCard],
+    productCards: [suncatcherCard, bookmarkCard, keychainCard, ornamentCard, rosaryCard, specialtyRosaryCard],
 };
 
 const fiveBySevenShadowboxCard: ProductCard = {
