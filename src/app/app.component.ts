@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, HostListener, inject, OnDestroy, ViewChild } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router, RouterOutlet } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 
+import { MediaMatcher } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
 import { RoutePath } from './enum/route-path.enum';
-import { MediaMatcher } from '@angular/cdk/layout';
+import { NavItem } from './model/nav-item';
 
 @Component({
   selector: 'btb-app',
@@ -22,6 +22,20 @@ export class AppComponent implements OnDestroy {
   @ViewChild(MatSidenav) sideNav: MatSidenav | null = null;
 
   mobileQuery: MediaQueryList;
+
+  navItems: Array<NavItem> = [
+    { label: "FAQ's", routePath: RoutePath.FAQ },
+    { label: "About", routePath: RoutePath.ABOUT },
+    { label: "Contact", routePath: RoutePath.CONTACT },
+  ];
+
+  productsNavItemLabel: string = "Products";
+
+  productsSubNavItems: Array<NavItem> = [
+    { label: "Jewelry", routePath: RoutePath.JEWELRY },
+    { label: "Non Jewelry", routePath: RoutePath.NONJEWELRY },
+    { label: "Shadowboxes", routePath: RoutePath.SHADOWBOXES },
+  ];
 
   routePaths = RoutePath;
 
