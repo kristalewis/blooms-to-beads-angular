@@ -4,6 +4,7 @@ import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validator
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DomSanitizer } from '@angular/platform-browser';
 import emailjs from '@emailjs/browser';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'btb-contact',
@@ -60,9 +61,24 @@ export class ContactComponent {
     if (this.emailForm.valid) {
       e.preventDefault();
 
+      let serviceId: string;
+      let templateId: string;
+      let userKeyId: string;
+
+      console.log(import.meta.env);
+      if (!import.meta.env.DEV) {
+        serviceId = process.env.EMAIL_JS_SERVICE_ID ?? "";
+        templateId = process.env.EMAIL_JS_TEMPLATE_ID ?? "";
+        userKeyId = process.env.EMAIL_JS_USER_PUBLIC_KEY_ID ?? "";
+      } else {
+        serviceId = environment?.emailJsServiceId;
+        templateId = environment?.emailJsTemplateId;
+        userKeyId = environment?.emailJsUserPublicKeyId;
+      }
+
       emailjs
-        .sendForm("service_bokwkna", "template_0ca5qlh", e.target as HTMLFormElement, {
-          publicKey: "JQcW3eZgPELQOC-Ap",
+        .sendForm(serviceId, templateId, e.target as HTMLFormElement, {
+          publicKey: userKeyId,
         })
         .then(
           () => {
@@ -75,7 +91,7 @@ export class ContactComponent {
         );
     }
   }
-
+  
   showSnackBar(isSuccess: boolean, snackBarMessage: string): void {
     this._snackBar.open(snackBarMessage, "", {
       duration: 2000,
