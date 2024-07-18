@@ -88,7 +88,7 @@ const rosaryCard: ProductCard = {
     productName: "Rosary",
     imageFileName: "rosary",
     viewMoreRoute: null,
-    description: "The basic rosary has a series of solid colored beads linked together in the rosary pattern.",
+    description: "The basic rosary is a series of solid colored beads separated by crystal spacers linked together in the rosary pattern.",
 };
 
 const specialtyRosaryCard: ProductCard = {
