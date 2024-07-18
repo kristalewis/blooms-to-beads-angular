@@ -7,7 +7,7 @@
     
     <div class="menu-item-container">
       <span class="top-nav-menu-item">
-          <div class="menu" [matMenuTriggerFor]="menu">{{ productsNavItemLabel }}</div>
+          <div class="menu clickable" [matMenuTriggerFor]="menu">{{ productsNavItemLabel }}</div>
           <mat-menu #menu="matMenu">
             @for (item of productsSubNavItems; track item) {
               <button mat-menu-item (click)="onNavItemClicked(item.routePath)">{{ item.label }}</button>
@@ -15,7 +15,7 @@
           </mat-menu>
       </span>
       @for (item of navItems; track item) {
-        <span class="top-nav-menu-item" mat-list-item (click)="onNavItemClicked(item.routePath)">{{ item.label }}</span>
+        <span class="top-nav-menu-item" mat-list-item><span class="clickable" (click)="onNavItemClicked(item.routePath)">{{ item.label }}</span></span>
       }
     </div>
   </mat-toolbar>
