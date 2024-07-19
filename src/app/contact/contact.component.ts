@@ -67,15 +67,9 @@ export class ContactComponent {
 
       console.log(environment)
 
-      if (environment.production) {
-        serviceId = import.meta.env.NG_APP_EMAIL_JS_SERVICE_ID ?? "";
-        templateId = import.meta.env.NG_APP_EMAIL_JS_TEMPLATE_ID ?? "";
-        userKeyId = import.meta.env.NG_APP_EMAIL_JS_USER_PUBLIC_KEY_ID ?? "";
-      } else {
-        serviceId = environment.emailJsServiceId;
-        templateId = environment.emailJsTemplateId;
-        userKeyId = environment.emailJsUserPublicKeyId;
-      }
+      serviceId = environment.emailJsServiceId;
+      templateId = environment.emailJsTemplateId;
+      userKeyId = environment.emailJsUserPublicKeyId;
 
       emailjs
         .sendForm(serviceId, templateId, e.target as HTMLFormElement, {
