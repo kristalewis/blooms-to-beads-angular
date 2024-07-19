@@ -61,15 +61,9 @@ export class ContactComponent {
     if (this.emailForm.valid) {
       e.preventDefault();
 
-      let serviceId: string;
-      let templateId: string;
-      let userKeyId: string;
-
-      console.log(environment)
-
-      serviceId = environment.emailJsServiceId;
-      templateId = environment.emailJsTemplateId;
-      userKeyId = environment.emailJsUserPublicKeyId;
+      const serviceId = environment.emailJsServiceId;
+      const templateId = environment.emailJsTemplateId;
+      const userKeyId = environment.emailJsUserPublicKeyId;
 
       emailjs
         .sendForm(serviceId, templateId, e.target as HTMLFormElement, {
