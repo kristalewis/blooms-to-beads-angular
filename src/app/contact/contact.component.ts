@@ -66,7 +66,7 @@ export class ContactComponent {
       let templateId: string;
       let userKeyId: string;
 
-      console.log(environment);
+      console.log(import.meta.env);
       if (environment.production) {
         serviceId = process.env.EMAIL_JS_SERVICE_ID ?? "";
         templateId = process.env.EMAIL_JS_TEMPLATE_ID ?? "";
