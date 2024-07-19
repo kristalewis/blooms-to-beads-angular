@@ -66,11 +66,11 @@ export class ContactComponent {
       let templateId: string;
       let userKeyId: string;
 
-      // console.log(process);
+      console.log("Test: " + import.meta.env.NG_APP_EMAIL_JS_SERVICE_ID);
       if (environment.production) {
-        serviceId = process.env.NG_APP_EMAIL_JS_SERVICE_ID ?? "";
-        templateId = process.env.NG_APP_EMAIL_JS_TEMPLATE_ID ?? "";
-        userKeyId = process.env.NG_APP_EMAIL_JS_USER_PUBLIC_KEY_ID ?? "";
+        serviceId = import.meta.env.NG_APP_EMAIL_JS_SERVICE_ID ?? "";
+        templateId = import.meta.env.NG_APP_EMAIL_JS_TEMPLATE_ID ?? "";
+        userKeyId = import.meta.env.NG_APP_EMAIL_JS_USER_PUBLIC_KEY_ID ?? "";
       } else {
         serviceId = environment.emailJsServiceId;
         templateId = environment.emailJsTemplateId;

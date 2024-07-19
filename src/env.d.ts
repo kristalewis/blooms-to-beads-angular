@@ -3,3 +3,10 @@ declare interface ImportMeta {
   readonly env: Env;
 }
 
+declare var process: {
+  env: {
+    NG_APP_ENV: string;
+    [key: string]: any;
+  };
+};
+

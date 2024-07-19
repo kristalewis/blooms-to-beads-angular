@@ -15,7 +15,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@ngx-env/builder",
           "options": {
             "outputPath": "dist/blooms-to-beads-angular",
             "index": "src/index.html",
