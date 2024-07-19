@@ -66,16 +66,16 @@ export class ContactComponent {
       let templateId: string;
       let userKeyId: string;
 
-      console.log(import.meta.env);
-      if (environment.production) {
-        serviceId = process.env.EMAIL_JS_SERVICE_ID ?? "";
-        templateId = process.env.EMAIL_JS_TEMPLATE_ID ?? "";
-        userKeyId = process.env.EMAIL_JS_USER_PUBLIC_KEY_ID ?? "";
-      } else {
-        serviceId = environment?.emailJsServiceId;
-        templateId = environment?.emailJsTemplateId;
-        userKeyId = environment?.emailJsUserPublicKeyId;
-      }
+      // console.log(process);
+      // if (environment.production) {
+        // serviceId = process.env.EMAIL_JS_SERVICE_ID ?? "";
+        // templateId = process.env.EMAIL_JS_TEMPLATE_ID ?? "";
+        // userKeyId = process.env.EMAIL_JS_USER_PUBLIC_KEY_ID ?? "";
+      // } else {
+        serviceId = environment.emailJsServiceId;
+        templateId = environment.emailJsTemplateId;
+        userKeyId = environment.emailJsUserPublicKeyId;
+      // }
 
       emailjs
         .sendForm(serviceId, templateId, e.target as HTMLFormElement, {

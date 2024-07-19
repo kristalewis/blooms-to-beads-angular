@@ -60,8 +60,8 @@ export class AppComponent implements OnDestroy {
     this._mobileQueryListener = () => this._changeDetectorRef.detectChanges();
     this.mobileQuery.addEventListener('change', this._mobileQueryListener);
 
-    // dotenv.config();
-    // console.log(process.env);
+    //dotenv.config();
+    //console.log(process.env);
   }
 
   ngOnDestroy(): void {
