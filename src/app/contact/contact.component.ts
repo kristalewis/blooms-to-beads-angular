@@ -65,6 +65,8 @@ export class ContactComponent {
       let templateId: string;
       let userKeyId: string;
 
+      console.log(environment)
+
       if (environment.production) {
         serviceId = import.meta.env.NG_APP_EMAIL_JS_SERVICE_ID ?? "";
         templateId = import.meta.env.NG_APP_EMAIL_JS_TEMPLATE_ID ?? "";

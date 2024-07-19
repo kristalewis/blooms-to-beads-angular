@@ -57,9 +57,6 @@ export class AppComponent implements OnDestroy {
     this.mobileQuery = this._media.matchMedia('(max-width: 599px)');
     this._mobileQueryListener = () => this._changeDetectorRef.detectChanges();
     this.mobileQuery.addEventListener('change', this._mobileQueryListener);
-
-    //dotenv.config()
-    //console.log(process.env);
   }
 
   ngOnDestroy(): void {
