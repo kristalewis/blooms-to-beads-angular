@@ -5,7 +5,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { DomSanitizer } from '@angular/platform-browser';
 import emailjs from '@emailjs/browser';
 import { environment } from '../../environments/environment';
-import dotenv from "dotenv";
 
 @Component({
   selector: 'btb-contact',
