@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    emailJsServiceId: "",
+    emailJsServiceId: "EMAIL_JS_SERVICE_ID",
     emailJsTemplateId: "",
     emailJsUserPublicKeyId: "",
 }
