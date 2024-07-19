@@ -67,15 +67,15 @@ export class ContactComponent {
       let userKeyId: string;
 
       // console.log(process);
-      // if (environment.production) {
-        // serviceId = process.env.EMAIL_JS_SERVICE_ID ?? "";
-        // templateId = process.env.EMAIL_JS_TEMPLATE_ID ?? "";
-        // userKeyId = process.env.EMAIL_JS_USER_PUBLIC_KEY_ID ?? "";
-      // } else {
+      if (environment.production) {
+        serviceId = process.env.NG_APP_EMAIL_JS_SERVICE_ID ?? "";
+        templateId = process.env.NG_APP_EMAIL_JS_TEMPLATE_ID ?? "";
+        userKeyId = process.env.NG_APP_EMAIL_JS_USER_PUBLIC_KEY_ID ?? "";
+      } else {
         serviceId = environment.emailJsServiceId;
         templateId = environment.emailJsTemplateId;
         userKeyId = environment.emailJsUserPublicKeyId;
-      // }
+      }
 
       emailjs
         .sendForm(serviceId, templateId, e.target as HTMLFormElement, {
