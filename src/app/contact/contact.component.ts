@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { DomSanitizer } from '@angular/platform-browser';
 import emailjs from '@emailjs/browser';
 import { environment } from '../../environments/environment';
+import dotenv from "dotenv";
 
 @Component({
   selector: 'btb-contact',
@@ -65,8 +66,8 @@ export class ContactComponent {
       let templateId: string;
       let userKeyId: string;
 
-      console.log(import.meta.env);
-      if (!import.meta.env.DEV) {
+      console.log(environment);
+      if (environment.production) {
         serviceId = process.env.EMAIL_JS_SERVICE_ID ?? "";
         templateId = process.env.EMAIL_JS_TEMPLATE_ID ?? "";
         userKeyId = process.env.EMAIL_JS_USER_PUBLIC_KEY_ID ?? "";

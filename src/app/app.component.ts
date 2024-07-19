@@ -11,6 +11,9 @@ import { MatListModule } from '@angular/material/list';
 import { RoutePath } from './enum/route-path.enum';
 import { NavItem } from './model/nav-item';
 
+import dotenv from "dotenv";
+
+
 @Component({
   selector: 'btb-app',
   standalone: true,
@@ -56,6 +59,9 @@ export class AppComponent implements OnDestroy {
     this.mobileQuery = this._media.matchMedia('(max-width: 599px)');
     this._mobileQueryListener = () => this._changeDetectorRef.detectChanges();
     this.mobileQuery.addEventListener('change', this._mobileQueryListener);
+
+    // dotenv.config();
+    // console.log(process.env);
   }
 
   ngOnDestroy(): void {
