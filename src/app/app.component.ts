@@ -12,6 +12,7 @@ import { RoutePath } from './enum/route-path.enum';
 import { NavItem } from './model/nav-item';
 
 import dotenv from "dotenv";
+import "dotenv/config.js";
 
 
 @Component({
@@ -60,7 +61,7 @@ export class AppComponent implements OnDestroy {
     this._mobileQueryListener = () => this._changeDetectorRef.detectChanges();
     this.mobileQuery.addEventListener('change', this._mobileQueryListener);
 
-    //dotenv.config();
+    //dotenv.config()
     //console.log(process.env);
   }
 
