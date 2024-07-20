@@ -30,7 +30,7 @@ const charmsCard: ProductCard = {
     imageFileName: "charms",
     viewMoreRoute: null,
     hasViewMoreButton: false,
-    description: "For items that feature a charm, a cross, a heart, or an angel are available. Alternative charms can be used upon request.",
+    description: "For items that feature a charm - a cross, a heart, or an angel are available. Alternative charms can be used upon request.",
 }
 
 const siwrlBeadsCard: ProductCard = {
