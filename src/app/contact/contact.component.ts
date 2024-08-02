@@ -87,6 +87,6 @@ export class ContactComponent {
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: isSuccess ? ["btb-snackbar", "snackbar-success"] : ["btb-snackbar", "snackbar-failure"],
-    })
+    });
   }
 }
