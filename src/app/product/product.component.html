@@ -6,7 +6,7 @@
             <mat-card-header> 
               <mat-card-title>{{ productCard.productName }}</mat-card-title>
             </mat-card-header>
-            <img mat-card-image src="assets/{{ productCard.imageFileName }}.jpg" alt="{{ productCard.productName }}">
+            <img mat-card-image (click)="viewImage(productCard.imagePath)" [src]="productCard.imagePath" alt="{{ productCard.productName }}">
             <mat-card-content>
                 <p>{{ productCard.description }}</p>
               </mat-card-content>

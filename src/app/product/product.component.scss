@@ -15,6 +15,10 @@
             @include mixins.px-1116-breakpoint();
             @include mixins.px-690-breakpoint();
             @include mixins.px-500-breakpoint();
+
+            img {
+              cursor: pointer;
+            }
         }
     }
 }

@@ -22,6 +22,7 @@
     "@angular/router": "^18.0.0",
     "@emailjs/browser": "^4.3.3",
     "dotenv": "^16.4.5",
+    "ngx-lightbox": "^3.0.0",
     "rxjs": "~7.8.0",
     "sass": "^1.77.7",
     "tslib": "^2.3.0",
