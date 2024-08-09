@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { By } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
 import { RoutePath } from '../enum/route-path.enum';
 import { HomeComponent } from './home.component';
@@ -14,7 +16,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeComponent],
+      imports: [HomeComponent, BrowserAnimationsModule],
       providers: [{ provide: Router, useValue: routerMock }],
     })
     .compileComponents();
@@ -38,5 +40,12 @@ describe('HomeComponent', () => {
   it('should not navigate to route', () => {
     component.routeToProductPage(null);
     expect(routerMock.navigate).not.toHaveBeenCalled();
+  });
+
+  it('should open image in lightbox when image is clicked', () => {
+    const viewImageSpy = spyOn(component, "viewImage").and.callThrough();
+    const imageDebugElem = fixture.debugElement.query(By.css('img'));
+    imageDebugElem.nativeElement.click();
+    expect(viewImageSpy).toHaveBeenCalled();
   });
 });

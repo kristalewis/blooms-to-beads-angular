@@ -76,14 +76,13 @@ describe('ContactComponent', () => {
     expect(component.emailForm.controls["reply_to"].valid).toBe(true);
   });
 
-  it('should fail to send email', () => {
+  it('should prevent event default', () => {
     component.emailForm.controls["from_name"].setValue("John Smith");
     component.emailForm.controls["reply_to"].setValue("johnSmith@email.com");
     component.emailForm.controls["message"].setValue("This is my email body!");
-    const spyOnShowSnackBar = spyOn(component, "showSnackBar");
-    component.sendEmail({ preventDefault(){} } as Event);
-    setTimeout(() => {
-      expect(spyOnShowSnackBar).toHaveBeenCalledWith(false, "Error Sending Email");
-    }, 100);
+    const event = { preventDefault(){} } as Event;
+    const preventDefaultSpy = spyOn(event, "preventDefault");
+    component.sendEmail(event);
+    expect(preventDefaultSpy).toHaveBeenCalled();
   });
 });

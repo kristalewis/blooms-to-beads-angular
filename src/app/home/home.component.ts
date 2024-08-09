@@ -17,7 +17,7 @@ export class HomeComponent {
   
   productCards = HOME_PAGE_PRODUCT_CARDS;
 
-  private _lightbox: Lightbox= inject(Lightbox);
+  private _lightbox: Lightbox = inject(Lightbox);
   private _router: Router = inject(Router);
 
   routeToProductPage(route: RoutePath | null): void {
