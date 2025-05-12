@@ -21,7 +21,7 @@
   </mat-toolbar>
 
   <mat-sidenav-container>
-    <mat-sidenav #sideNav [mode]="'over'" [fixedInViewport]="true" [fixedTopGap]="mobileQuery.matches ? 56 : 64">
+    <mat-sidenav #sideNav [mode]="'over'" [fixedInViewport]="true" [fixedTopGap]="mobileQuery()?.matches ? 56 : 64">
       <mat-nav-list>
         <span class="side-nav-menu-item" [matMenuTriggerFor]="sideBarMenu">
           <div class="menu">{{ productsNavItemLabel }}</div>

@@ -25,7 +25,7 @@ describe('ProductComponent', () => {
   });
 
   it('should open image in lightbox when image is clicked', () => {
-    fixture.componentInstance.pageLayout = { title: "Test", productCards: [{} as ProductCard] } as ProductPage;
+    fixture.componentInstance.pageLayout.set({ title: "Test", productCards: [{} as ProductCard] } as ProductPage);
     fixture.detectChanges();
     const viewImageSpy = spyOn(component, "viewImage").and.callThrough();
     const imageDebugElem = fixture.debugElement.query(By.css('img'));

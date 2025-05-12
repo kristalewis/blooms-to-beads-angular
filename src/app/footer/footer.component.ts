@@ -8,7 +8,6 @@ import { RoutePath } from '../enum/route-path.enum';
     templateUrl: './footer.component.html'
 })
 export class FooterComponent {
-
   private _routePaths = RoutePath;
 
   private _router: Router = inject(Router);

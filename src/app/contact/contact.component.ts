@@ -12,7 +12,6 @@ import { environment } from '../../environments/environment';
     templateUrl: './contact.component.html'
 })
 export class ContactComponent {
-
   emailForm: FormGroup = new FormGroup ({
     from_name: new FormControl<string>(""),
     reply_to: new FormControl<string>(""),
@@ -52,7 +51,7 @@ export class ContactComponent {
     this.emailForm.controls["message"].setValidators(this._requiredIfTouchedValidation);
   }
 
-  sendEmail(e: Event) {
+  sendEmail(e: Event): void {
     this.emailForm.markAllAsTouched();
     this.emailForm.controls["message"].setValue(this._sanitizer.sanitize(SecurityContext.HTML, this.emailForm.controls["message"].value));
     (<any>Object).values(this.emailForm.controls).forEach((control: FormControl) => control.updateValueAndValidity());

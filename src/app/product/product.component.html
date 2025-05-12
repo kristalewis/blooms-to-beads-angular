@@ -1,7 +1,7 @@
-<div class="page-title">{{ pageLayout?.title }}</div>
+<div class="page-title">{{ pageLayout()?.title }}</div>
 
 <div class="product-page-container">
-    @for (productCard of pageLayout?.productCards; track productCard) {
+    @for (productCard of pageLayout()?.productCards; track productCard) {
         <mat-card class="product-card" appearance="outlined">
             <mat-card-header> 
               <mat-card-title>{{ productCard.productName }}</mat-card-title>

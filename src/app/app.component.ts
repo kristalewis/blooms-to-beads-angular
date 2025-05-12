@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, HostListener, inject, OnDestroy, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, inject, OnDestroy, signal, ViewChild } from '@angular/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -21,7 +21,7 @@ import { NavItem } from './model/nav-item';
 export class AppComponent implements OnDestroy {
   @ViewChild(MatSidenav) sideNav: MatSidenav | null = null;
 
-  mobileQuery: MediaQueryList;
+  mobileQuery = signal<MediaQueryList | undefined>(undefined);
 
   navItems: Array<NavItem> = [
     { label: "FAQ's", routePath: RoutePath.FAQ },
@@ -53,13 +53,13 @@ export class AppComponent implements OnDestroy {
   private _router: Router = inject(Router);
 
   constructor() {
-    this.mobileQuery = this._media.matchMedia('(max-width: 599px)');
+    this.mobileQuery.set(this._media.matchMedia('(max-width: 599px)'));
     this._mobileQueryListener = () => this._changeDetectorRef.detectChanges();
-    this.mobileQuery.addEventListener('change', this._mobileQueryListener);
+    this.mobileQuery()?.addEventListener('change', this._mobileQueryListener);
   }
 
   ngOnDestroy(): void {
-    this.mobileQuery.removeEventListener('change', this._mobileQueryListener);
+    this.mobileQuery()?.removeEventListener('change', this._mobileQueryListener);
   }
 
   onNavItemClicked(routePath: RoutePath): void {

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
 import { Lightbox, LightboxModule } from 'ngx-lightbox';
@@ -13,14 +13,14 @@ import { PRODUCT_PAGE_PRODUCT_CARDS } from './product.props';
     templateUrl: './product.component.html'
 })
 export class ProductComponent {
-  pageLayout: ProductPage | undefined = undefined;
+  pageLayout = signal<ProductPage | undefined>(undefined);
 
   private _lightbox: Lightbox= inject(Lightbox);
   private _router: Router = inject(Router);
 
   constructor() {
     const routePath = <RoutePath>this._router.url.split("/")[1];
-    this.pageLayout = PRODUCT_PAGE_PRODUCT_CARDS.get(routePath);
+    this.pageLayout.set(PRODUCT_PAGE_PRODUCT_CARDS.get(routePath));
   }
 
   viewImage(imagePath: string) {

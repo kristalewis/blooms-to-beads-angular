@@ -13,7 +13,6 @@ import { HOME_PAGE_PRODUCT_CARDS } from './home.props';
     templateUrl: './home.component.html'
 })
 export class HomeComponent {
-  
   productCards = HOME_PAGE_PRODUCT_CARDS;
 
   private _lightbox: Lightbox = inject(Lightbox);
@@ -25,7 +24,7 @@ export class HomeComponent {
     }
   }
 
-  viewImage(imagePath: string) {
+  viewImage(imagePath: string): void {
     const album = { src: imagePath, thumb: '' };
     this._lightbox.open([album], 0, { positionFromTop: 100, fitImageInViewPort: false, enableTransition: false });
   }
