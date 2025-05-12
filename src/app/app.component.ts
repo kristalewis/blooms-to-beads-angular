@@ -70,4 +70,8 @@ export class AppComponent implements OnDestroy {
   closeSideNav(): void {
     this.sideNav?.close();
   }
+
+  onRouterActivated(): void {
+    document.getElementsByTagName("mat-sidenav-content")[0].scrollTo(0, 0);
+  }
 }

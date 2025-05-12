@@ -67,4 +67,10 @@ describe('AppComponent', () => {
     component.closeSideNav();
     expect(spyOnCloseSideNav).toHaveBeenCalled();
   });
+
+  it('should scroll to top of mat-sidenav-content', () => {
+    const scrollToSpy = spyOn(document.getElementsByTagName("mat-sidenav-content")[0], "scrollTo");
+    component.onRouterActivated();
+    expect(scrollToSpy).toHaveBeenCalledWith(0, 0);
+  });
 });

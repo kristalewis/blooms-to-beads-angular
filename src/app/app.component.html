@@ -20,7 +20,7 @@
     </div>
   </mat-toolbar>
 
-  <mat-sidenav-container class="example-sidenav-container" >
+  <mat-sidenav-container>
     <mat-sidenav #sideNav [mode]="'over'" [fixedInViewport]="true" [fixedTopGap]="mobileQuery.matches ? 56 : 64">
       <mat-nav-list>
         <span class="side-nav-menu-item" [matMenuTriggerFor]="sideBarMenu">
@@ -38,7 +38,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <div class="page-body-container">
-        <router-outlet></router-outlet>
+        <router-outlet (activate)="onRouterActivated()"></router-outlet>
       </div>
       <btb-footer></btb-footer>
     </mat-sidenav-content>

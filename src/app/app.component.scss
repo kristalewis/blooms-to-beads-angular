@@ -113,12 +113,11 @@ mat-card-header.mat-mdc-card-header {
 }
 
 .lb-outerContainer {
+    max-height: 70vh;
     max-width: 50vw;
     @media only screen and (max-width: 800px) { 
         max-width: 90vw;
     }
-
-    max-height: 70vh;
 
     .lb-container {
         height: 100%;
@@ -128,11 +127,11 @@ mat-card-header.mat-mdc-card-header {
     }
 
     .lb-image {
+        max-height: 65vh;
         max-width: 45vw;
         @media only screen and (max-width: 800px) { 
             max-width: 80vw;
         }
-        max-height: 65vh;
     }
 }
 
