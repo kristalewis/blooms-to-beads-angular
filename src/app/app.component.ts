@@ -13,11 +13,10 @@ import { NavItem } from './model/nav-item';
 
 
 @Component({
-  selector: 'btb-app',
-  standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatMenuModule, MatSidenavModule, MatListModule, RouterOutlet, FooterComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'btb-app',
+    imports: [CommonModule, MatToolbarModule, MatMenuModule, MatSidenavModule, MatListModule, RouterOutlet, FooterComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnDestroy {
   @ViewChild(MatSidenav) sideNav: MatSidenav | null = null;

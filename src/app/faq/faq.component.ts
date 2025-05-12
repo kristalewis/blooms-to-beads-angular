@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { FaqQuestion } from '../model/faq-question';
 
 @Component({
-  selector: 'btb-faq',
-  standalone: true,
-  imports: [],
-  templateUrl: './faq.component.html',
+    selector: 'btb-faq',
+    imports: [],
+    templateUrl: './faq.component.html'
 })
 export class FaqComponent {
   questions = [

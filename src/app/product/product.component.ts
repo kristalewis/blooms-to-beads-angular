@@ -8,10 +8,9 @@ import { ProductPage } from '../model/product-page';
 import { PRODUCT_PAGE_PRODUCT_CARDS } from './product.props';
 
 @Component({
-  selector: 'btb-product',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, LightboxModule],
-  templateUrl: './product.component.html',
+    selector: 'btb-product',
+    imports: [CommonModule, MatCardModule, LightboxModule],
+    templateUrl: './product.component.html'
 })
 export class ProductComponent {
   pageLayout: ProductPage | undefined = undefined;

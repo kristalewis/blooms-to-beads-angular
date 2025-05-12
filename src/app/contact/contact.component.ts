@@ -7,10 +7,9 @@ import emailjs from '@emailjs/browser';
 import { environment } from '../../environments/environment';
 
 @Component({
-  selector: 'btb-contact',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './contact.component.html',
+    selector: 'btb-contact',
+    imports: [CommonModule, ReactiveFormsModule],
+    templateUrl: './contact.component.html'
 })
 export class ContactComponent {
 

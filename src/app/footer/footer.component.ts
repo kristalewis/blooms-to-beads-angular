@@ -3,10 +3,9 @@ import { Router } from '@angular/router';
 import { RoutePath } from '../enum/route-path.enum';
 
 @Component({
-  selector: 'btb-footer',
-  standalone: true,
-  imports: [],
-  templateUrl: './footer.component.html',
+    selector: 'btb-footer',
+    imports: [],
+    templateUrl: './footer.component.html'
 })
 export class FooterComponent {
 

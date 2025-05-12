@@ -8,10 +8,9 @@ import { RoutePath } from '../enum/route-path.enum';
 import { HOME_PAGE_PRODUCT_CARDS } from './home.props';
 
 @Component({
-  selector: 'btb-home',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, LightboxModule],
-  templateUrl: './home.component.html',
+    selector: 'btb-home',
+    imports: [CommonModule, MatCardModule, MatButtonModule, LightboxModule],
+    templateUrl: './home.component.html'
 })
 export class HomeComponent {
   
