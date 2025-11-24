@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { FaqQuestion } from '../model/faq-question';
 
 @Component({
-    selector: 'btb-faq',
-    imports: [],
-    templateUrl: './faq.component.html'
+  selector: 'btb-faq',
+  imports: [],
+  templateUrl: './faq.component.html'
 })
+
 export class FaqComponent {
   questions = [
     { question: "How many flowers do I need?", answer: "There's something called the 'three rose rule'. The petal volume of three standard roses is what is needed to create one bracelet, or 12 beads. If you plan on using flowers that don't have a high petal volume per bloom, then you will need to bring a lot more of said flowers compared to other flowers that have a high petal-to-bloom ratio. There is no such thing as too many flowers - the more you bring, the more I have to work with!" } as FaqQuestion,
