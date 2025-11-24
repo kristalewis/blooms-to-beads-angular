@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
@@ -8,10 +7,11 @@ import { ProductPage } from '../model/product-page';
 import { PRODUCT_PAGE_PRODUCT_CARDS } from './product.props';
 
 @Component({
-    selector: 'btb-product',
-    imports: [CommonModule, MatCardModule, LightboxModule],
-    templateUrl: './product.component.html'
+  selector: 'btb-product',
+  imports: [MatCardModule, LightboxModule],
+  templateUrl: './product.component.html'
 })
+
 export class ProductComponent {
   pageLayout = signal<ProductPage | undefined>(undefined);
 

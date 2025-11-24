@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -9,7 +9,7 @@ import { HOME_PAGE_PRODUCT_CARDS } from './home.props';
 
 @Component({
     selector: 'btb-home',
-    imports: [CommonModule, MatCardModule, MatButtonModule, LightboxModule],
+    imports: [MatCardModule, MatButtonModule, LightboxModule],
     templateUrl: './home.component.html'
 })
 export class HomeComponent {

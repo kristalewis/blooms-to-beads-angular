@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, HostListener, inject, OnDestroy, signal, ViewChild } from '@angular/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
@@ -13,11 +12,12 @@ import { NavItem } from './model/nav-item';
 
 
 @Component({
-    selector: 'btb-app',
-    imports: [CommonModule, MatToolbarModule, MatMenuModule, MatSidenavModule, MatListModule, RouterOutlet, FooterComponent],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
+  selector: 'btb-app',
+  imports: [MatToolbarModule, MatMenuModule, MatSidenavModule, MatListModule, RouterOutlet, FooterComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
 })
+
 export class AppComponent implements OnDestroy {
   @ViewChild(MatSidenav) sideNav: MatSidenav | null = null;
 

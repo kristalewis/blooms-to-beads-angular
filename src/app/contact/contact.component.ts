@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject, SecurityContext } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidatorFn } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -7,10 +6,11 @@ import emailjs from '@emailjs/browser';
 import { environment } from '../../environments/environment';
 
 @Component({
-    selector: 'btb-contact',
-    imports: [CommonModule, ReactiveFormsModule],
-    templateUrl: './contact.component.html'
+  selector: 'btb-contact',
+  imports: [ReactiveFormsModule],
+  templateUrl: './contact.component.html'
 })
+
 export class ContactComponent {
   emailForm: FormGroup = new FormGroup ({
     from_name: new FormControl<string>(""),
